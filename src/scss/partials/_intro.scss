@@ -1,0 +1,22 @@
+.intro {
+  height: 100%;
+  width: 100%;
+  @include flex-center;
+  flex-direction: column;
+  .heading {
+    font-weight: 400;
+    font-size: 5.2rem;
+    margin-top: -6rem;
+  }
+  .para {
+    margin-bottom: 2.5rem;
+  }
+  &__form {
+    @include flex-align-center(row);
+    gap: 0.5rem;
+    border-bottom: 1px solid $offWhite2;
+    .input-group input {
+      border: none;
+    }
+  }
+}

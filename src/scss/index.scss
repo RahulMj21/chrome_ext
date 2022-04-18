@@ -1,0 +1,108 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap");
+@import "animate.css";
+@import "./variables";
+@import "./mixins";
+@import "./partials/app";
+@import "./partials/intro";
+@import "./partials/main";
+
+*,
+*::before,
+*::after {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+body {
+  font-family: "Roboto", sans-serif;
+  line-height: 1.5;
+  color: $white;
+}
+input,
+button {
+  outline: none;
+  border: none;
+  font: inherit;
+}
+.input-group {
+  position: relative;
+  input {
+    background: transparent;
+    border-bottom: 1px solid $offWhite2;
+    padding: 0.5rem;
+    padding-left: 2.5rem;
+    font-size: 1.3rem;
+    color: $offWhite1;
+    @include transition-ease;
+    &::placeholder {
+      color: $offWhite3;
+    }
+  }
+  svg {
+    position: absolute;
+    color: $offWhite2;
+    font-size: 1.4rem;
+    top: 50%;
+    transform: translateY(-50%);
+    left: 0.4rem;
+    pointer-events: none;
+  }
+}
+.btn-brand {
+  height: 2.5rem;
+  width: 2.5rem;
+  border-radius: 50%;
+  color: $offWhite1;
+  cursor: pointer;
+  @include flex-center;
+  @include transition-ease;
+  background: transparent;
+  font-size: 1.2rem;
+  &:hover {
+    color: $green;
+    transform: translateX(0.6rem);
+  }
+  &:active {
+    transform: scale(0.98);
+    transition: none;
+  }
+}
+.heading {
+  font-size: 6rem;
+  font-weight: 300;
+}
+.para {
+  font-size: 1.25rem;
+  margin-top: -1rem;
+  color: $offWhite3;
+}
+.btn-fade {
+  position: relative;
+  @include flex-center;
+  background: transparent;
+  color: $offWhite3;
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+  border-radius: 3rem;
+  font-size: 1.3rem;
+  z-index: 1;
+  &::before {
+    position: absolute;
+    content: "";
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 75%;
+    height: 80%;
+    border-radius: 2rem;
+    background: rgba(255, 255, 255, 0.14);
+    opacity: 0;
+    z-index: -1;
+    @include transition-ease;
+  }
+  &:hover {
+    &::before {
+      opacity: 1;
+    }
+  }
+}
